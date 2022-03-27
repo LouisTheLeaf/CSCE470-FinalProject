@@ -4,9 +4,31 @@
 
 This is a project for CSCE470.
 
-## How to switch branches
+## How to Git on command line
+
+### How to switch branches
 
 Use 'git switch <branch name>'
+
+### How to check if your current status if you should pull/push/etc
+
+git status
+
+### How to push
+
+git add *      OR       git add <path specific file>
+
+git commit -m "<commit message here>"
+
+git push
+
+### How to pull from a branch
+
+git pull
+
+OR
+
+git pull origin <any branch you want to pull from>
 
 ## How to run Flask
 
