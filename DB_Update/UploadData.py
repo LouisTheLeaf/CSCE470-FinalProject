@@ -23,5 +23,3 @@ with open('professors.csv') as csv_file:
             line_count += 1
     print(f'Processed {line_count} lines.')
     
-
-
