@@ -13,7 +13,7 @@ def add_professors(cur):
         line_count = 0
         for row in csv_reader:
             row['Tags']=row['Tags'].replace("'", "")
-            FillProfessors+= "("+row['RMP ID']+",'"+row['Last Name']+"','"+row['First Name']+"',"+row['Rating']+","+row['Number of Ratings']+","+row['Retake Percentage']+","+row['Level of Difficulty']+",'"+row['Tags']+"'),"
+            FillProfessors+= "("+row['RMP ID']+",'"+row['Last Name'].upper()+"','"+row['First Name'].upper()+"',"+row['Rating']+","+row['Number of Ratings']+","+row['Retake Percentage']+","+row['Level of Difficulty']+",'"+row['Tags']+"'),"
                     
 
     FillProfessors=FillProfessors[:-1]+";"
@@ -35,10 +35,10 @@ def add_class_data(cur):
         # Classes[AllClassDict[0]['number']]['professor']={}
         for sectionNum in AllClassDict:
             # print(sectionNum['prof'])
-            if sectionNum['prof'] in Classes[sectionNum['number']].keys():
-                Classes[sectionNum['number']][sectionNum['prof']].append(float(sectionNum['gpa']))
+            if sectionNum['prof'].upper() in Classes[sectionNum['number']].keys():
+                Classes[sectionNum['number']][sectionNum['prof'].upper()].append(float(sectionNum['gpa']))
             else:
-                Classes[sectionNum['number']][sectionNum['prof']]=[]
+                Classes[sectionNum['number']][sectionNum['prof'].upper()]=[]
                 Classes[sectionNum['number']][sectionNum['prof']].append(float(sectionNum['gpa']))
         # Classes["110"]
         # print(Classes['110']['WILLIAMS T'])
@@ -67,8 +67,8 @@ cur = conn.cursor()
 curDict=conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
 if(conn):
     print('connected!')
-    #add_professors(cur)
-    add_class_data(cur)
+    add_professors(cur)
+    # add_class_data(cur)
     conn.commit()
 # print(os.listdir("DB_Update/Classes_Annex"))
 
