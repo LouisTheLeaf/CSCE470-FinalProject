@@ -14,7 +14,7 @@ import math
 # if(conn):
 
 # HOW TO USE
-# SEARCHDB() IS ALL YOU NEED AND WILL RETURN AN A NESTED LIST WITH 
+# SEARCHDB() IS ALL YOU NEED AND WILL RETURN AN A NESTED LIST WITH
 # INDEX 0 WITH HISTORICAL DATA AND INDEX 1 has RMP data
 # index 0: Historical data (course number, prof last name, avg GPA)
 # index 1: RMP data (rmp_id  |    last_name    |  first_name  | rating | num_ratings | retake_percent | difficulty |)
@@ -31,12 +31,13 @@ def searchDB(query):
     conn = psycopg2.connect(DATABASE_URL)
     curDict=conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
     DBData=[]
-    curDict.execute("Select * FROM historical WHERE classnum="+query+"")
+    temp = "Select * FROM historical WHERE classnum="+query+""
+    curDict.execute(temp)
     AllProf=curDict.fetchall()
     # print(AllProf)
     RMP=[]
     for prof in AllProf:
-        RMP.append(searchRMP(prof[1],curDict)) 
+        RMP.append(searchRMP(prof[1],curDict))
     DBData=[AllProf,RMP]
     # print(RMP)
     return DBData
