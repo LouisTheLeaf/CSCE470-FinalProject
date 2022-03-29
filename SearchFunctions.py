@@ -26,7 +26,10 @@ def searchRMP(query,curDict):
         RMP_Prof=RMP_Prof[0]
     # print(RMP_Prof)
     return RMP_Prof
-def searchDB(query,curDict):
+def searchDB(query):
+    DATABASE_URL = 'postgres://ojzjasqybnzwna:218f0f774b87ab48cabd578084ec32e5f0358c68d96a236712125929e48aa438@ec2-18-215-96-22.compute-1.amazonaws.com:5432/d50nfdg9435sqf'
+    conn = psycopg2.connect(DATABASE_URL)
+    curDict=conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
     DBData=[]
     curDict.execute("Select * FROM historical WHERE classnum="+query+"")
     AllProf=curDict.fetchall()
@@ -47,5 +50,5 @@ query = "Leyk"
 q2 = '110'
 if(conn):
     # searchRMP(query,curDict)
-    AllProfessorData=searchDB(q2,curDict)
+    AllProfessorData=searchDB(q2)
     print(AllProfessorData[0][0],AllProfessorData[1][0])
