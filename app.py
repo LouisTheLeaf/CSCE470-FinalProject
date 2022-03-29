@@ -27,3 +27,6 @@ def index():
         if query_from_form:
             dbResults = searchDB( str(query_from_form) )
     return render_template('frontproto.html', data=dbResults)
+
+if __name__ == '__main__':
+    my_awesome_app.run()

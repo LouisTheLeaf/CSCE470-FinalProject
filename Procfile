@@ -1,1 +1,1 @@
-web: gunicorn app:pick-a-prof
+web: gunicorn app:app
