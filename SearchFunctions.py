@@ -33,18 +33,18 @@ def searchDB(query):
     conn = psycopg2.connect(DATABASE_URL)
     curDict=conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
     DBData=[]
-    
+
     SQL ="Select * FROM historical WHERE classnum=(%s);"
     data = (query,)
     curDict.execute(SQL,data)
 
     AllProf=curDict.fetchall()
-    print(AllProf)
+    #print(AllProf)
     RMP=[]
     for prof in AllProf:
         RMP.append(searchRMP(prof[1],curDict))
     DBData=[AllProf,RMP]
-    # print(RMP)
+    #print(RMP)
     return DBData
 def main():
     DATABASE_URL = 'postgres://ojzjasqybnzwna:218f0f774b87ab48cabd578084ec32e5f0358c68d96a236712125929e48aa438@ec2-18-215-96-22.compute-1.amazonaws.com:5432/d50nfdg9435sqf'
@@ -57,5 +57,5 @@ def main():
     if(conn):
         # searchRMP(query,curDict)
         AllProfessorData=searchDB(q2)
-        print(AllProfessorData[0][0],AllProfessorData[1][0])
+        #print(AllProfessorData[0][0],AllProfessorData[1][0])
 main()
