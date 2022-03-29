@@ -1,13 +1,7 @@
 from flask import Flask, render_template,request
 from SearchFunctions import *
-import os
-from pydoc import classname
 import psycopg2
 import psycopg2.extras
-import csv
-import json
-import math
-
 app = Flask(__name__, template_folder='templates')
 name = ""
 
