@@ -19,7 +19,7 @@ import math
 # index 0: Historical data (course number, prof last name, avg GPA)
 # index 1: RMP data (rmp_id  |    last_name    |  first_name  | rating | num_ratings | retake_percent | difficulty |)
 def searchRMP(query,curDict):
-    RMP_Prof=[]
+    RMP_Prof={}
     SQL ="Select * FROM professors WHERE last_name LIKE (%s)"
     data = (query,)
     curDict.execute(SQL,data)
@@ -58,4 +58,4 @@ def main():
         # searchRMP(query,curDict)
         AllProfessorData=searchDB(q2)
         print(AllProfessorData[0][0],AllProfessorData[1][0])
-main()
+# main()
