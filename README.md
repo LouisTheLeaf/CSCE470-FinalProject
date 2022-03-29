@@ -2,7 +2,28 @@
 
 ## Introduction
 
-This is a project for CSCE470.
+This is a project for CSCE470 called Pick-A-Prof!
+
+## How to run this App locally
+
+### What to install
+
+pip install flask
+pip install request
+pip install psycopg2-binary
+pip install gunicorn
+
+### What to run in command line
+
+export FLASK_APP=app
+
+export FLASK_ENV=development
+
+flask run
+
+### Other information / Credits
+
+This information is based off this website: https://www.digitalocean.com/community/tutorials/how-to-make-a-web-application-using-flask-in-python-3
 
 ## How to Git on command line
 
@@ -30,18 +51,6 @@ OR
 
 git pull origin [any branch you want to pull from]
 
-## How to run Flask
-
-pip install flask
-
-export FLASK_APP=app
-
-export FLASK_ENV=development
-
-flask run
-
-
-This information is based off this website: https://www.digitalocean.com/community/tutorials/how-to-make-a-web-application-using-flask-in-python-3
 
 ## How to find tokens for pushing to a branch
 
