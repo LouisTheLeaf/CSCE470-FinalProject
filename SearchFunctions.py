@@ -57,10 +57,5 @@ def main():
     if(conn):
         # searchRMP(query,curDict)
         AllProfessorData=searchDB(q2)
-<<<<<<< HEAD
         print(AllProfessorData[0][0],AllProfessorData[1][0])
 # main()
-=======
-        #print(AllProfessorData[0][0],AllProfessorData[1][0])
-main()
->>>>>>> ed23978a279826dd360a9aad2c26fba61725d93e
