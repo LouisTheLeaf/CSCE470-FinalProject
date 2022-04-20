@@ -11,7 +11,12 @@ body{
 h1 {
   color: white;
 }
-
+#mainTable{
+  text-align: center;
+  margin-right:10vw;
+  margin-left:10vw;
+    
+}
 #title {
   text-align: center;
   border: 2px #eee solid;
@@ -36,8 +41,8 @@ h1 {
 .square {
   text-align: center;
   height: 20vh;
-  width: 35vw;
-  margin-left: 32.5vw;
+  width: 80%;
+  margin-left:10vw;
   margin-top: 40px;
   border-radius: 10px;
   background-color: #a7a7a7;
