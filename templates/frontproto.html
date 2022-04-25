@@ -20,60 +20,18 @@
 		</form>
 		<div id="mainTable"  style="text-align: center;color:white">
 			{% if data[0][0]|length > 0 %}
-			<table id="example" class=" compact stripe row-border" style="width:80%;" >
-				<thead>
-					<tr id="Colnames" style="color: black" >
-								<td>Name </td>
-								<td>GPA </td>
-								<td>Rating </td>
-								<td>Number of Reviews </td>
-								<td>Retake % </td>
-								<td>Difficulty </td>
-								<td>Comments </td>
-					</tr>
-				</thead>
-				<tbody style="color:black">
-						{% for result in data[0] %}
-						<tr>
-							{% if data[1][loop.index0] |length > 0 %}
-							<td> <a style="color:#500000" href="https://www.ratemyprofessors.com/ShowRatings.jsp?tid={{data[1][loop.index0][0]}}" target="_blank" rel="noreferrer noopener">{{result[1]}}</a> </td>
-							<td> {{'%0.2f'|format(result[2]) }} </td>
-							{% if data[1][loop.index0][3] == -1 %}
-							<td>  </td>
-							<td> {{data[1][loop.index0][4]}} </td>
-							<td>0</td>
-							<td> </td>
-							<td> {{data[1][loop.index0][7]}} </td>
-							{%else%}
-							<td> {{data[1][loop.index0][3]}} </td>
-							<td> {{data[1][loop.index0][4]}} </td>
-							<td> {{data[1][loop.index0][5]}} </td>
-							<td> {{data[1][loop.index0][6]}} </td>
-							<td> {{data[1][loop.index0][7]}} </td>
-							{%endif%}
-							{% else %}
-							<td> {{result[1]}}</td>
-							<td> {{'%0.2f'|format(result[2]) }} </td>
-							<td>  </td>
-							<td> 0 </td>
-							<td> 0 </td>
-							<td>  </td>
-							<td> N/A </td>
-							{%endif%}
-
-						</tr>
-						{%endfor%}
-				</tbody>
-			</table>
+				{% for result in data %}
+				<tr>
+					{% for elem in result %}
+						<td>{{ elem }}</td>
+					{% endfor %}
+				</tr>
+				{% endfor %}
 			{% else %}
-				{% if search %}
-						<div class="square">
-							<h2 id="cfc-head" >Cannot Find Course!</h2>
-							<p id="cfc-body">Please check your search if you’ve typed the correct course number or if it exists.</p>
-						</div>
-				{% endif %}
-				<img class="csce-logo" src="https://wjm.s3.amazonaws.com/wpdnextgen/uploads/kwaskom.png" alt="CSCE Department Logo">
+				No Search Yet!
 			{% endif %}
+		</table>
+
 
     	</div>
 
