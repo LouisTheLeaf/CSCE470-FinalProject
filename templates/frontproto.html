@@ -22,7 +22,7 @@
 			{% if data[0][0]|length > 0 %}
 			<table id="example" class=" compact stripe row-border" style="width:80%;" >
 				<thead>
-					<tr id="Colnames" >
+					<tr id="Colnames" style="color: black" >
 								<td>Name </td>
 								<td>GPA </td>
 								<td>Rating </td>
@@ -66,13 +66,15 @@
 				</tbody>
 			</table>
 			{% else %}
+				{% if search %}
 						<div class="square">
 							<h2 id="cfc-head" >Cannot Find Course!</h2>
 							<p id="cfc-body">Please check your search if you’ve typed the correct course number or if it exists.</p>
 						</div>
-			<img class="csce-logo" src="https://wjm.s3.amazonaws.com/wpdnextgen/uploads/kwaskom.png" alt="CSCE Department Logo">
+				{% endif %}
+				<img class="csce-logo" src="https://wjm.s3.amazonaws.com/wpdnextgen/uploads/kwaskom.png" alt="CSCE Department Logo">
 			{% endif %}
-      
+
     	</div>
 
 
