@@ -1,6 +1,57 @@
 h1 {
-    border: 2px #eee solid;
-    color: brown;
-    text-align: center;
-    padding: 10px;
+  color: white;
+}
+#mainTable{
+  text-align: center;
+  margin-right:10vw;
+  margin-left:10vw;
+  background-color: white;
+  border: 5px #eee solid;
+  border-radius: 10px;
+  border-color: white;
+}
+#title {
+  text-align: center;
+  border: 2px #eee solid;
+  border-radius: 10px;
+  width: 80vw;
+  margin-left: 10vw;
+  margin-top: 5vh;
+  background-color: #a7a7a7;
+  padding: 10px;
+}
+
+#searchbar {
+  text-align:center;
+  width:50vw;
+  margin-left:25vw;
+}
+
+#searchbutton {
+  margin: 10px;
+  background-color: white;
+}
+
+.square {
+  text-align: center;
+  height: 20vh;
+  width: 80%;
+  margin-left:8vw;
+  margin-top: 40px;
+  border-radius: 10px;
+  background-color: #a7a7a7;
+}
+
+#cfc-head {
+  padding-top: 20px;
+}
+
+#cfc-body {
+  padding: 10px;
+}
+
+.csce-logo {
+  max-width: 70%;
+  background-color: white;
+  margin-top: 25vh;
 }
